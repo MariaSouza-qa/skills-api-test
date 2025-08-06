@@ -1,0 +1,1252 @@
+{
+  "info": {
+    "_postman_id": "baa3de5e-23fc-470f-ab98-e2715ae83a92",
+    "name": "TK",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "ontology",
+      "item": [
+        {
+          "name": "skills",
+          "item": [
+            {
+              "name": "skills taxonomy",
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      ""
+                    ]
+                  }
+                },
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      ""
+                    ]
+                  }
+                }
+              ],
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Tx-AccountId",
+                    "value": "{{TX_ACCOUNT_ID}}"
+                  },
+                  {
+                    "key": "Tx-ServiceKey",
+                    "value": "{{TX_SERVICE_KEY}}"
+                  }
+                ],
+                "url": {
+                  "raw": "https://api.eu.textkernel.com/tx/v10/skills/v2/taxonomy",
+                  "protocol": "https",
+                  "host": [
+                    "api",
+                    "eu",
+                    "textkernel",
+                    "com"
+                  ],
+                  "path": [
+                    "tx",
+                    "v10",
+                    "skills",
+                    "v2",
+                    "taxonomy"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "ontology suggest-skills-from-professions",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Tx-AccountId",
+                "value": "{{TX_ACCOUNT_ID}}"
+              },
+              {
+                "key": "Tx-ServiceKey",
+                "value": "{{TX_SERVICE_KEY}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ProfessionCodeIds\": [\n    0\n  ],\n  \"Limit\": 5,\n  \"OutputLanguage\": \"en\",\n  \"Types\": [\n    \"All\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://api.eu.textkernel.com/tx/v10/ontology/v2/suggest-skills-from-professions",
+              "protocol": "https",
+              "host": [
+                "api",
+                "eu",
+                "textkernel",
+                "com"
+              ],
+              "path": [
+                "tx",
+                "v10",
+                "ontology",
+                "v2",
+                "suggest-skills-from-professions"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "ontology suggest-skills-from-skills",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Tx-AccountId",
+                "value": "{{TX_ACCOUNT_ID}}"
+              },
+              {
+                "key": "Tx-ServiceKey",
+                "value": "{{TX_SERVICE_KEY}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Skills\": [\n    {\n      \"Score\": 0.84370774,\n      \"Id\": \"KSCQ0SWSSG568HKQ1YNL\",\n      \"Description\": \"Delegation Skills\"\n    }\n  ],\n  \"Limit\": 5,\n  \"OutputLanguage\": \"en\",\n  \"Types\": [\n    \"All\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://api.eu.textkernel.com/tx/v10/ontology/v2/suggest-skills-from-skills ",
+              "protocol": "https",
+              "host": [
+                "api",
+                "eu",
+                "textkernel",
+                "com"
+              ],
+              "path": [
+                "tx",
+                "v10",
+                "ontology",
+                "v2",
+                "suggest-skills-from-skills "
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "ontology skills-similarity-score",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Tx-AccountId",
+                "value": "{{TX_ACCOUNT_ID}}"
+              },
+              {
+                "key": "Tx-ServiceKey",
+                "value": "{{TX_SERVICE_KEY}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"SkillsA\": [\n    {\n      \"Score\": 0.84370774,\n      \"Id\": \"KSCQ0SWSSG568HKQ1YNL\",\n      \"Description\": \"Delegation Skills\"\n    }\n  ],\n  \"SkillsB\": [\n    {\n        \"Score\": 0.84278315,\n        \"Id\": \"KS126KX66QJ08DF838DG\",\n        \"Description\": \"Middle Management\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://api.eu.textkernel.com/tx/v10/ontology/v2/skills-similarity-score",
+              "protocol": "https",
+              "host": [
+                "api",
+                "eu",
+                "textkernel",
+                "com"
+              ],
+              "path": [
+                "tx",
+                "v10",
+                "ontology",
+                "v2",
+                "skills-similarity-score"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "ontology suggest-professions",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Tx-AccountId",
+                "value": "{{TX_ACCOUNT_ID}}"
+              },
+              {
+                "key": "Tx-ServiceKey",
+                "value": "{{TX_SERVICE_KEY}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"SkillIds\": [\n    \"KSCQ0SWSSG568HKQ1YNL\",\n    \"KS126KX66QJ08DF838DG\"\n  ],\n  \"Skills\": [\n    {\n      \"Score\": 0.84370774,\n      \"Id\": \"KSCQ0SWSSG568HKQ1YNL\",\n      \"Description\": \"Delegation Skills\"\n    },\n    {\n        \"Score\": 0.84278315,\n        \"Id\": \"KS126KX66QJ08DF838DG\",\n        \"Description\": \"Middle Management\"\n    }\n  ],\n  \"ReturnMissingSkills\": true,\n  \"Limit\": 5,\n  \"OutputLanguage\": \"en\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://api.eu.textkernel.com/tx/v10/ontology/v2/suggest-professions",
+              "protocol": "https",
+              "host": [
+                "api",
+                "eu",
+                "textkernel",
+                "com"
+              ],
+              "path": [
+                "tx",
+                "v10",
+                "ontology",
+                "v2",
+                "suggest-professions"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "ontology compare-professions",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Tx-AccountId",
+                "value": "{{TX_ACCOUNT_ID}}"
+              },
+              {
+                "key": "Tx-ServiceKey",
+                "value": "{{TX_SERVICE_KEY}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ProfessionCodeIds\": [\n    5021,\n    4105\n  ],\n  \"ProfessionACodeId\": 5021,\n  \"ProfessionBCodeId\": 4105,\n  \"OutputLanguage\": \"en\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://api.eu.textkernel.com/tx/v10/ontology/v2/compare-professions",
+              "protocol": "https",
+              "host": [
+                "api",
+                "eu",
+                "textkernel",
+                "com"
+              ],
+              "path": [
+                "tx",
+                "v10",
+                "ontology",
+                "v2",
+                "compare-professions"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "ontology compare-skills-to-profession",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Tx-AccountId",
+                "value": "{{TX_ACCOUNT_ID}}"
+              },
+              {
+                "key": "Tx-ServiceKey",
+                "value": "{{TX_SERVICE_KEY}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"SkillIds\": [\n    \"KSCQ0SWSSG568HKQ1YNL\",\n    \"KS126KX66QJ08DF838DG\"\n  ],\n  \"Skills\": [\n    {\n      \"Score\": 0.84370774,\n      \"Id\": \"KSCQ0SWSSG568HKQ1YNL\",\n      \"Description\": \"Delegation Skills\"\n    },\n    {\n        \"Score\": 0.84278315,\n        \"Id\": \"KS126KX66QJ08DF838DG\",\n        \"Description\": \"Middle Management\"\n    }\n  ],\n  \"ProfessionCodeId\": 5021,\n  \"OutputLanguage\": \"en\"\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://api.eu.textkernel.com/tx/v10/ontology/v2/compare-skills-to-profession",
+              "protocol": "https",
+              "host": [
+                "api",
+                "eu",
+                "textkernel",
+                "com"
+              ],
+              "path": [
+                "tx",
+                "v10",
+                "ontology",
+                "v2",
+                "compare-skills-to-profession"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "professions",
+      "item": [
+        {
+          "name": "profession lookup",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Tx-AccountId",
+                "value": "{{TX_ACCOUNT_ID}}"
+              },
+              {
+                "key": "Tx-ServiceKey",
+                "value": "{{TX_SERVICE_KEY}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"CodeIds\": [\n    5021,\n    4105,\n    5567,\n    5671\n  ],\n  \"OutputLanguage\": \"en\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://api.eu.textkernel.com/tx/v10/professions/lookup",
+              "protocol": "https",
+              "host": [
+                "api",
+                "eu",
+                "textkernel",
+                "com"
+              ],
+              "path": [
+                "tx",
+                "v10",
+                "professions",
+                "lookup"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "profession metadata",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Tx-AccountId",
+                "value": "{{TX_ACCOUNT_ID}}"
+              },
+              {
+                "key": "Tx-ServiceKey",
+                "value": "{{TX_SERVICE_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "https://api.eu.textkernel.com/tx/v10/professions/metadata",
+              "protocol": "https",
+              "host": [
+                "api",
+                "eu",
+                "textkernel",
+                "com"
+              ],
+              "path": [
+                "tx",
+                "v10",
+                "professions",
+                "metadata"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "profession normalize",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Tx-AccountId",
+                "value": "{{TX_ACCOUNT_ID}}"
+              },
+              {
+                "key": "Tx-ServiceKey",
+                "value": "{{TX_SERVICE_KEY}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"JobTitles\": [\n    \"ServiceNow Developer\",\n    \"Salesforce Engineer\"\n  ],\n  \"Language\": \"en\",\n  \"OutputLanguage\": \"en\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://api.eu.textkernel.com/tx/v10/professions/normalize",
+              "protocol": "https",
+              "host": [
+                "api",
+                "eu",
+                "textkernel",
+                "com"
+              ],
+              "path": [
+                "tx",
+                "v10",
+                "professions",
+                "normalize"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "profession autocomplete",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Tx-AccountId",
+                "value": "{{TX_ACCOUNT_ID}}"
+              },
+              {
+                "key": "Tx-ServiceKey",
+                "value": "{{TX_SERVICE_KEY}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Prefix\": \"Salesforce\",\n  \"Limit\": 5,\n  \"Languages\": [\n    \"en\"\n  ],\n  \"OutputLanguage\": \"en\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://api.eu.textkernel.com/tx/v10/professions/autocomplete",
+              "protocol": "https",
+              "host": [
+                "api",
+                "eu",
+                "textkernel",
+                "com"
+              ],
+              "path": [
+                "tx",
+                "v10",
+                "professions",
+                "autocomplete"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "profession taxonomy",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Tx-AccountId",
+                "value": "{{TX_ACCOUNT_ID}}"
+              },
+              {
+                "key": "Tx-ServiceKey",
+                "value": "{{TX_SERVICE_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "https://api.eu.textkernel.com/tx/v10/professions/taxonomy",
+              "protocol": "https",
+              "host": [
+                "api",
+                "eu",
+                "textkernel",
+                "com"
+              ],
+              "path": [
+                "tx",
+                "v10",
+                "professions",
+                "taxonomy"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "skills",
+      "item": [
+        {
+          "name": "skill autocomplete",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Response is JSON\", function () {\r",
+                  "    pm.response.to.be.withBody;\r",
+                  "    pm.response.to.be.json;\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Skills field exists\", function () {\r",
+                  "    var jsonData = pm.response.json();\r",
+                  "    pm.expect(jsonData).to.have.property(\"Value\");\r",
+                  "    pm.expect(jsonData.Value).to.have.property(\"Skills\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"'Skills' field contains at least 1 item\", function () {\r",
+                  "    var jsonData = pm.response.json();\r",
+                  "    pm.expect(jsonData.Value.Skills).to.be.an(\"array\").that.is.not.empty;\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Tx-AccountId",
+                "value": "{{TX_ACCOUNT_ID}}"
+              },
+              {
+                "key": "Tx-ServiceKey",
+                "value": "{{TX_SERVICE_KEY}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"limit\": 5,\n  \"prefix\": \"Java\",\n  \"outputLanguage\": \"en\",\n  \"languages\": [\"en\"],\n  \"types\": [\"All\"]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://api.eu.textkernel.com/tx/v10/skills/v2/autocomplete",
+              "protocol": "https",
+              "host": [
+                "api",
+                "eu",
+                "textkernel",
+                "com"
+              ],
+              "path": [
+                "tx",
+                "v10",
+                "skills",
+                "v2",
+                "autocomplete"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "skill lookup",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "  pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Response is JSON\", function () {\r",
+                  "  pm.response.to.be.withBody;\r",
+                  "  pm.response.to.be.json;\r",
+                  "});\r",
+                  "\r",
+                  "const response = pm.response.json();\r",
+                  "\r",
+                  "pm.test(\"Skills field exists\", function () {\r",
+                  "  pm.expect(response.Value).to.have.property(\"Skills\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Returned skills contain description\", function () {\r",
+                  "  response.Value.Skills.forEach(skill => {\r",
+                  "    pm.expect(skill).to.have.property(\"Description\");\r",
+                  "    pm.expect(skill.Description).to.be.a(\"string\");\r",
+                  "  });\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Tx-AccountId",
+                "value": "{{TX_ACCOUNT_ID}}"
+              },
+              {
+                "key": "Tx-ServiceKey",
+                "value": "{{TX_SERVICE_KEY}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"SkillIds\": [\"KS120076FGP5WGWYMP0F\"],\n  \"outputLanguage\": \"en\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://api.eu.textkernel.com/tx/v10/skills/v2/lookup",
+              "protocol": "https",
+              "host": [
+                "api",
+                "eu",
+                "textkernel",
+                "com"
+              ],
+              "path": [
+                "tx",
+                "v10",
+                "skills",
+                "v2",
+                "lookup"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "skill normalize",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let jsonData = pm.response.json();\r",
+                  "\r",
+                  "// Test 1: Status code is 200\r",
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "// Test 2: Resposta \u00e9 JSON\r",
+                  "pm.test(\"Response is JSON\", function () {\r",
+                  "    pm.response.to.be.json;\r",
+                  "});\r",
+                  "\r",
+                  "// Teste 3: Campo 'Skills' existe dentro de 'Value'\r",
+                  "pm.test(\"Field Skill exists\", function () {\r",
+                  "    pm.expect(jsonData.Value).to.have.property(\"Skills\");\r",
+                  "});\r",
+                  "\r",
+                  "// Teste 4: Lista de skills tem ao menos um item\r",
+                  "pm.test(\"Skill list has at least one item\", function () {\r",
+                  "    pm.expect(jsonData.Value.Skills.length).to.be.above(0);\r",
+                  "});\r",
+                  "\r",
+                  "// Teste 5: Cada skill tem descri\u00e7\u00e3o\r",
+                  "pm.test(\"Each skill has a description\", function () {\r",
+                  "    jsonData.Value.Skills.forEach(skill => {\r",
+                  "        pm.expect(skill).to.have.property(\"Description\");\r",
+                  "        pm.expect(skill.Description).to.be.a(\"string\").and.not.empty;\r",
+                  "    });\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Tx-AccountId",
+                "value": "{{TX_ACCOUNT_ID}}"
+              },
+              {
+                "key": "Tx-ServiceKey",
+                "value": "{{TX_SERVICE_KEY}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Skills\": [\n    \"Salesforce\",\n    \"ServiceNow\"\n  ],\n  \"Language\": \"en\",\n  \"OutputLanguage\": \"en\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://api.eu.textkernel.com/tx/v10/skills/v2/normalize",
+              "protocol": "https",
+              "host": [
+                "api",
+                "eu",
+                "textkernel",
+                "com"
+              ],
+              "path": [
+                "tx",
+                "v10",
+                "skills",
+                "v2",
+                "normalize"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "skill extract",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let jsonData = pm.response.json();\r",
+                  "\r",
+                  "// Teste 1: Status deve ser 200\r",
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "// Teste 2: Resposta \u00e9 JSON\r",
+                  "pm.test(\"Response is JSON\", function () {\r",
+                  "    pm.response.to.be.json;\r",
+                  "});\r",
+                  "\r",
+                  "// Teste 3: Campo 'Skills' existe dentro de 'Value'\r",
+                  "pm.test(\"Field Skills exists\", function () {\r",
+                  "    pm.expect(jsonData.Value).to.have.property(\"Skills\");\r",
+                  "});\r",
+                  "\r",
+                  "// Teste 4: Cont\u00e9m pelo menos uma skill extra\u00edda\r",
+                  "pm.test(\"Contains at least one extracted skill\", function () {\r",
+                  "    pm.expect(jsonData.Value.Skills.length).to.be.above(0);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Tx-AccountId",
+                "value": "{{TX_ACCOUNT_ID}}"
+              },
+              {
+                "key": "Tx-ServiceKey",
+                "value": "{{TX_SERVICE_KEY}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Text\": \"I have experience in Java\",\n  \"Language\": \"en\",\n  \"Threshold\": 0,\n  \"OutputLanguage\": \"en\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://api.eu.textkernel.com/tx/v10/skills/extract",
+              "protocol": "https",
+              "host": [
+                "api",
+                "eu",
+                "textkernel",
+                "com"
+              ],
+              "path": [
+                "tx",
+                "v10",
+                "skills",
+                "extract"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "skill metadata",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Response is JSON\", function () {\r",
+                  "    pm.response.to.be.withBody;\r",
+                  "    pm.response.to.be.json;\r",
+                  "});\r",
+                  "\r",
+                  "const json = pm.response.json();\r",
+                  "\r",
+                  "pm.test(\"Response is not empty\", function () {\r",
+                  "    pm.expect(Object.keys(json).length).to.be.above(0);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Tx-AccountId",
+                "value": "{{TX_ACCOUNT_ID}}"
+              },
+              {
+                "key": "Tx-ServiceKey",
+                "value": "{{TX_SERVICE_KEY}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://api.eu.textkernel.com/tx/v10/skills/v2/metadata",
+              "protocol": "https",
+              "host": [
+                "api",
+                "eu",
+                "textkernel",
+                "com"
+              ],
+              "path": [
+                "tx",
+                "v10",
+                "skills",
+                "v2",
+                "metadata"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "skill taxonomy",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Response is JSON\", function () {\r",
+                  "    pm.response.to.be.withBody;\r",
+                  "    pm.response.to.be.json;\r",
+                  "});\r",
+                  "\r",
+                  "const json = pm.response.json();\r",
+                  "\r",
+                  "pm.test(\"Field skills exists\", function () {\r",
+                  "    pm.expect(json.Value).to.have.property(\"Skills\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Skills list contains at least 1 item\", function () {\r",
+                  "    pm.expect(json.Value.Skills.length).to.be.above(0);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Tx-AccountId",
+                "value": "{{TX_ACCOUNT_ID}}"
+              },
+              {
+                "key": "Tx-ServiceKey",
+                "value": "{{TX_SERVICE_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "https://api.eu.textkernel.com/tx/v10/skills/v2/taxonomy",
+              "protocol": "https",
+              "host": [
+                "api",
+                "eu",
+                "textkernel",
+                "com"
+              ],
+              "path": [
+                "tx",
+                "v10",
+                "skills",
+                "v2",
+                "taxonomy"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
