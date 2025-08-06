@@ -137,3 +137,29 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# Arquivos de ambiente do Postman
+*.TK local environment.postman_environment.json
+
+# Arquivos de execução locais
+run-test.bat
+
+# Arquivos de variáveis locais
+.env
+*.env
+
+# Logs
+*.log
+
+# Configs locais e temporários
+.DS_Store
+*.local
+
+# Ignorar arquivos de credenciais
+*.env
+id_ed25519
+id_ed25519.pub
+*.pem
+*.key
+
+
