@@ -72,15 +72,4 @@ The report will be saved to reports\newman-report.html
 📊 Report example
 
 
-👩‍💻 About me
-
-I'm Maria Souza, a Junior QA transitioning careers with focus on API testing, automation and quality practices. I'm learning by doing and sharing my progress publicly in this repo. 🌱
-
-🔎 Tools: Postman and Newman
-
-Postman is a platform for developing and testing REST APIs, with features for requests, environments and test scripting.
-
-Newman is a CLI tool to run Postman collections automatically, ideal for CI/CD workflows.
-
-These tools are essential to my development as a Junior QA.
 
